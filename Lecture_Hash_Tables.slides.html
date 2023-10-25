@@ -7483,7 +7483,9 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Note</strong> This notebook has several <strong>Try</strong> sections that we will try during class as in-class activity.</p>
+<p><strong>Note</strong>.</p>
+<p>All materials used in this lecture is available at this link: <a href="https://github.com/Tahiya31/demo_lecture">https://github.com/Tahiya31/demo_lecture</a></p>
+<p>This notebook has several <strong>Try</strong> sections that we will try during class as in-class activity.</p>
 </div>
 </div>
 </div>
@@ -7519,13 +7521,13 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Answer">Answer<a class="anchor-link" href="#Answer">¶</a></h2><ul>
-<li><p>The website doesn’t store the entire original password you choose.</p>
+<li><p>The website doesn’t store the entire original password you chose.</p>
 </li>
 <li><p>Just stores its hash, a transformed version of it.</p>
 </li>
 <li><p>If the the site’s database gets hacked, the hackers won’t be able to know your password but just the hash of your password.</p>
 </li>
-<li><p>As hashes are one-way function, there is no way to trace back to your password.</p>
+<li><p>As hashes are one-way function, there is no way to trace back to your actual password.</p>
 </li>
 </ul>
 </div>
@@ -7538,8 +7540,8 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="How-are-password-stored-in-a-database?">How are password stored in a database?<a class="anchor-link" href="#How-are-password-stored-in-a-database?">¶</a></h2><p>If you store the (user_name, passwords) pairs to a database as they came along, every time you will need to go through each entry by going through.</p>
-<p>One way to avoid this is to store all our user names and passwords in a structured way</p>
+<h2 id="How-are-passwords-stored-in-a-database?">How are passwords stored in a database?<a class="anchor-link" href="#How-are-passwords-stored-in-a-database?">¶</a></h2><p>If you store the (user_name, password) pairs to a database as they came along, every time you need to retrieve one, you will need to go through each entry, one at a time.</p>
+<p>One way to avoid this is to store all our user names and passwords in a structured way.</p>
 <p>So that you can retrieve it without having to go through each of them.</p>
 </div>
 </div>
@@ -7728,7 +7730,7 @@ main {
 <h3 id="Key-terms-for-today">Key terms for today<a class="anchor-link" href="#Key-terms-for-today">¶</a></h3><ul>
 <li>Hash Table</li>
 <li>Hash Function: Division Method</li>
-<li>Collision and Collision REsolution: Open Addressing, Linear Probing, quadratic probing</li>
+<li>Collision and Collision Resolution: Open Addressing, Linear Probing, Quadratic probing</li>
 <li>Chaining</li>
 <li>Big O, run time complexity</li>
 </ul>
@@ -7756,7 +7758,7 @@ main {
 <ul>
 <li><p>Hash Table is a data structure that allows us to quickly search for an item.</p>
 </li>
-<li><p>Think of a collection of items which are stored in such a way as to make it easy to find them later.</p>
+<li><p>Think of a collection of items which are stored in such a way to make it easy to find them later.</p>
 </li>
 </ul>
 </div>
@@ -7803,7 +7805,7 @@ main {
 <p>If we have $m$ slots, our hash function:</p>
 <ul>
 <li>will take any item in our collection</li>
-<li>return its index as an integer.</li>
+<li>return its index as an integer</li>
 </ul>
 <p>This index tells us the slot name, and its range is between $0$ and $m-1$.</p>
 </div>
@@ -7821,7 +7823,7 @@ main {
 <ul>
 <li>items in the collection change is likely to change over time.</li>
 <li>will need to increase size of the hash table to accomodate each new item.</li>
-<li>waste of memory</li>
+<li>waste of memory.</li>
 </ul>
 </div>
 </div>
@@ -8031,7 +8033,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="But-...">But ...<a class="anchor-link" href="#But-...">¶</a></h3><p>What is we have multiple items whose hash value is same and thus are assigned to the same slot in the hash table.</p>
+<h3 id="But-...">But ...<a class="anchor-link" href="#But-...">¶</a></h3><p>What if we have multiple items whose hash value is same and thus are assigned to the same slot in the hash table?</p>
 <p>When two or more items are assigned to the same slot, it's called ..</p>
 <h2 id="Collision">Collision<a class="anchor-link" href="#Collision">¶</a></h2>
 </div>
@@ -8086,7 +8088,7 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Note">Note<a class="anchor-link" href="#Note">¶</a></h3><p>This may require going through the entire collection and then coming back to the starting index in a circle.</p>
 <p>Open addressing tries to accommodate items by finding next open slot that is available.</p>
-<p>Since we are checking one slot at a time, it is called <strong>linear probling</strong>.</p>
+<p>Since we are checking one slot at a time, it is called <strong>linear probing</strong>.</p>
 </div>
 </div>
 </div>
@@ -8097,19 +8099,68 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Now-you-try!">Now you try!<a class="anchor-link" href="#Now-you-try!">¶</a></h3><p>This hash table has several slots where multplie items assigned.Let's use linear probing to find new slots for these items . Use the table below.</p>
-<p>| Item | Hash Value (slot number)| Collision Resolution with Linear Probing |
-|:-| -: | :-|
-|26|   |<br/>
-|35|   |<br/>
-|27|   |
-|17|   |
-|42|   |
-|70|   |
-|57|   |
-|45|   |
-|86|   |<br/>
-|4 |   |</p>
+<h3 id="Now-you-try!">Now you try!<a class="anchor-link" href="#Now-you-try!">¶</a></h3><p>This hash table has several slots where multplie items assigned. Let's use linear probing to find new slots for these items. Use the table below.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Item</th>
+<th style="text-align:right">Hash Value (slot number)</th>
+<th style="text-align:left">Collision Resolution with Linear Probing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">26</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">35</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">27</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">17</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">42</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">70</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">57</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">45</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">86</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -8125,7 +8176,7 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 <ol>
 <li>Start at the index we get from the hash function.</li>
 <li>Is the value there? Yes, that is great.</li>
-<li>Is the value there? No: then continue until am empty slot is found.</li>
+<li>Is the value there? No: then continue to the next slot until the value is found.</li>
 </ol>
 </div>
 </div>
@@ -8137,8 +8188,8 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Disadvantage-of-Linear-Probing">Disadvantage of Linear Probing<a class="anchor-link" href="#Disadvantage-of-Linear-Probing">¶</a></h3><h4 id="Clustering">Clustering<a class="anchor-link" href="#Clustering">¶</a></h4><p>We can probably see what will happen if a collision occurs at the same slot for multiple items.</p>
-<p>All the slots near that specific slot will be filled eventually.</p>
+<h3 id="Disadvantage-of-Linear-Probing">Disadvantage of Linear Probing<a class="anchor-link" href="#Disadvantage-of-Linear-Probing">¶</a></h3><h4 id="Clustering">Clustering<a class="anchor-link" href="#Clustering">¶</a></h4><p>We can probably see what will happen if a collision occurs at the same slot for multiple items,</p>
+<p>all the slots near that specific slot will be filled eventually.</p>
 <p><strong>This will result in clustering where several slots after/near the occupied slot will start getting occupied in a row.</strong></p>
 </div>
 </div>
@@ -8164,9 +8215,9 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Disadvantage</strong>.</p>
 <ul>
-<li><p>If there are many items that have been to assigned to the same location, finding a specific item in that table becomes harder.</p>
+<li><p>If there are many items that have been assigned to the same location, finding a specific item in that table becomes harder.</p>
 </li>
-<li><p>We will first get to the location, but instead of an item we will get a collection.</p>
+<li><p>We will first get to the location, but instead of an item, we will get a collection.</p>
 </li>
 <li><p>For that collection we have to use separate search method to see whether that item is present in that collection.</p>
 </li>
@@ -8216,7 +8267,7 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </li>
 <li><p>For electronic library catalogs. Hash Table implementations allow for a fast find among the millions of materials stored in the library.</p>
 </li>
-<li><p>For implementing passwords for systems with multiple users. Hash Tables allow for a fast retrieval of the password which corresponds to a given username.</p>
+<li><p>For implementing password database for systems with multiple users. Hash Tables allow for a fast retrieval of the password which corresponds to a given username.</p>
 </li>
 </ul>
 </div>
