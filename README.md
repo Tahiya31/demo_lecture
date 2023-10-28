@@ -2,4 +2,4 @@
 
 Contains materials for teaching demonstration on Hash Table.
 
-Slides are created from notebooks using [nbconvert](https://nbconvert.readthedocs.io).
+Slides are created from jupyter notebook using [nbconvert](https://nbconvert.readthedocs.io).
