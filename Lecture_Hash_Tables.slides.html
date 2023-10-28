@@ -7758,7 +7758,7 @@ main {
 <ul>
 <li><p>Hash Table is a data structure that allows us to quickly search for an item.</p>
 </li>
-<li><p>Think of a collection of items which are stored in such a way to make it easy to find them later.</p>
+<li><p>Think of a collection of items which are <strong>stored</strong> in such a way to make it easy to <strong>find</strong> them later.</p>
 </li>
 </ul>
 </div>
@@ -7774,7 +7774,7 @@ main {
 <ul>
 <li><p>Each position of the hash table, often called a slot, can hold an item and is named by an integer value starting at 0</p>
 <p>Let's call this name <strong>index</strong>.</p>
-<p>For example, we will have a slot indexed 0, a slot indexed 1, a slot indexed 2, and so on. Initially, the hash table contains no items so every slot is empty.</p>
+<p>For example, we will have a slot indexed 0, a slot indexed 1, a slot indexed 2, and so on. Initially, the hash table contains no item so every slot is empty.</p>
 </li>
 </ul>
 <p><img alt="alternative text" src="images/hash_table.png"/></p>
@@ -7821,9 +7821,9 @@ main {
 <h3 id="How-can-we-design-a-hash-function?">How can we design a hash function?<a class="anchor-link" href="#How-can-we-design-a-hash-function?">¶</a></h3><p>A hash function that maps each item to a unique slot is a <strong>perfect hash function</strong>.</p>
 <p>Unfortunately there is no way to design a perfect hash function as</p>
 <ul>
-<li>items in the collection change is likely to change over time.</li>
+<li>items in the collection is likely to increase over time.</li>
 <li>will need to increase size of the hash table to accomodate each new item.</li>
-<li>waste of memory.</li>
+<li>this leads to waste of memory.</li>
 </ul>
 </div>
 </div>
@@ -7836,7 +7836,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Okay, we accept that accomodating one item per slot is not feasible.</p>
-<p>Then a practical solution will be to allow multiple items per slot if needed.</p>
+<p>Then a practical solution will be to allow multiple items per slot if needed (when number of items, $n$ $&gt;$ number of slots, $m$)</p>
 </div>
 </div>
 </div>
@@ -7848,9 +7848,9 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Goal-of-hash-function-design">Goal of hash function design<a class="anchor-link" href="#Goal-of-hash-function-design">¶</a></h2><ul>
-<li><p>distribute the items evenly across different slots.</p>
+<li><p>Distribute the items evenly across different slots.</p>
 </li>
-<li><p>easy to compute hash function</p>
+<li><p>Easy to compute hash function</p>
 </li>
 <li><p>Designing good hash function is hard.</p>
 </li>
@@ -7867,11 +7867,11 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Designing-Hash-Function">Designing Hash Function<a class="anchor-link" href="#Designing-Hash-Function">¶</a></h2><h3 id="Strategy-1:-Division-Method-(or-Remainder-Method)">Strategy 1: Division Method (or Remainder Method)<a class="anchor-link" href="#Strategy-1:-Division-Method-(or-Remainder-Method)">¶</a></h3><p>Steps:</p>
 <ol>
-<li>We pick a collection of items.</li>
-<li>Our  hash function $h$, will take one item at a time and divide it by the number of slots.</li>
+<li>We pick a collection of $n$ items.</li>
+<li>Our  hash function $h$, will take one item at a time and divide it by the number of slots, $m$.</li>
 <li>The remainder from the division will be the hash value and will determine the slot number.</li>
 </ol>
-<p><strong>Hash Function</strong> $h(item) = item \% 11 $</p>
+<p><strong>Hash Function</strong> $h(item) = item \% m $</p>
 </div>
 </div>
 </div>
@@ -7882,7 +7882,8 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Now-You-Try!">Now You Try!<a class="anchor-link" href="#Now-You-Try!">¶</a></h3><p>Consider the following table. Our hash table has 11 slots.</p>
+<h3 id="Now-You-Try!">Now You Try!<a class="anchor-link" href="#Now-You-Try!">¶</a></h3><p>Consider the following collection of 10 items.</p>
+<p>Our hash table has 11 slots ($m = 11$).</p>
 <p>Using Remainder method, can we get the hash values for these items?</p>
 <table>
 <thead>
@@ -7959,31 +7960,43 @@ main {
 <td style="text-align:right"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left">1</td>
 <td style="text-align:right"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left">2</td>
 <td style="text-align:right"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left">3</td>
 <td style="text-align:right"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left">4</td>
 <td style="text-align:right"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left">5</td>
 <td style="text-align:right"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left">6</td>
 <td style="text-align:right"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
+<td style="text-align:left">7</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
 <td style="text-align:right"></td>
 </tr>
 </tbody>
@@ -8022,7 +8035,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's review <a href="https://runestone.academy/ns/books/published/pythonds/SortSearch/Hashing.html">chapter 6.5.1</a> to learn about a couple more hash functions such as <em>folding method</em>, <em>mid square method</em>, etc.</p>
+<p>Let's review <a href="https://runestone.academy/ns/books/published/pythonds/SortSearch/Hashing.html">this book chapter</a> to learn about a couple more hash functions such as <em>folding method</em>, <em>mid square method</em>, etc.</p>
 </div>
 </div>
 </div>
@@ -8034,7 +8047,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="But-...">But ...<a class="anchor-link" href="#But-...">¶</a></h3><p>What if we have multiple items whose hash value is same and thus are assigned to the same slot in the hash table?</p>
-<p>When two or more items are assigned to the same slot, it's called ..</p>
+<p>When two or more items are assigned to the same slot, it's called ...</p>
 <h2 id="Collision">Collision<a class="anchor-link" href="#Collision">¶</a></h2>
 </div>
 </div>
@@ -8068,13 +8081,13 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">¶</a></h3><p>You find an available chair and just sit.</p>
+<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">¶</a></h3><p>You keep looking. When you find an available chair and just sit.</p>
 <p><strong>Steps</strong></p>
 <ol>
 <li>Start at the index we get from the hash function.</li>
 <li>Is there a value already?
 Yes: then move to the next index (slots) in a sequential manner.</li>
-<li>Continue until am empty slot is found.</li>
+<li>Continue until an empty slot is found.</li>
 </ol>
 </div>
 </div>
@@ -8099,63 +8112,69 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Now-you-try!">Now you try!<a class="anchor-link" href="#Now-you-try!">¶</a></h3><p>This hash table has several slots where multplie items assigned. Let's use linear probing to find new slots for these items. Use the table below.</p>
+<h3 id="Now-you-try!">Now you try!<a class="anchor-link" href="#Now-you-try!">¶</a></h3><p>The hash table we constructed earlier has several slots where mulitple items are assigned simultaneously.</p>
+<p>Let's use linear probing to find new slots for these items. Use the table below.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Item</th>
-<th style="text-align:right">Hash Value (slot number)</th>
+<th style="text-align:left">index</th>
+<th style="text-align:right">item (Collision allowed)</th>
 <th style="text-align:left">Collision Resolution with Linear Probing</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">26</td>
+<td style="text-align:left">0</td>
 <td style="text-align:right"></td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">35</td>
+<td style="text-align:left">1</td>
 <td style="text-align:right"></td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">27</td>
+<td style="text-align:left">2</td>
 <td style="text-align:right"></td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">17</td>
-<td style="text-align:right"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">42</td>
-<td style="text-align:right"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">70</td>
-<td style="text-align:right"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">57</td>
-<td style="text-align:right"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">45</td>
-<td style="text-align:right"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">86</td>
+<td style="text-align:left">3</td>
 <td style="text-align:right"></td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">4</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
 <td style="text-align:right"></td>
 <td style="text-align:left"></td>
 </tr>
@@ -8171,11 +8190,11 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-do-we-search-for-items-in-such-tables?">How do we search for items in such tables?<a class="anchor-link" href="#How-do-we-search-for-items-in-such-tables?">¶</a></h3><p>Just like steps we used to build the table, we will use the same for search in the table.</p>
+<h3 id="How-do-we-search-for-items-in-such-table?">How do we search for items in such table?<a class="anchor-link" href="#How-do-we-search-for-items-in-such-table?">¶</a></h3><p>Just like steps we used to build the table, we will use the same for search in the table.</p>
 <p>Steps:</p>
 <ol>
 <li>Start at the index we get from the hash function.</li>
-<li>Is the value there? Yes, that is great.</li>
+<li>Is the value there? Yes: that is great.</li>
 <li>Is the value there? No: then continue to the next slot until the value is found.</li>
 </ol>
 </div>
@@ -8190,7 +8209,20 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Disadvantage-of-Linear-Probing">Disadvantage of Linear Probing<a class="anchor-link" href="#Disadvantage-of-Linear-Probing">¶</a></h3><h4 id="Clustering">Clustering<a class="anchor-link" href="#Clustering">¶</a></h4><p>We can probably see what will happen if a collision occurs at the same slot for multiple items,</p>
 <p>all the slots near that specific slot will be filled eventually.</p>
-<p><strong>This will result in clustering where several slots after/near the occupied slot will start getting occupied in a row.</strong></p>
+<p>This will result in <strong>clustering</strong> where several slots after/near the occupied slot will start getting occupied in a row.</p>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4ebbe50d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>One strategy to minimize clustering is <strong>Quadratic Probing</strong></p>
+<p>Instead of inserting items to the next available slot in a <strong>linear</strong> manner $h(item) + i$,</p>
+<p>insert items by adding square values to the computed hash value $ h(item) + i^2$.</p>
 </div>
 </div>
 </div>
@@ -8202,7 +8234,8 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Chaining:-Bonus-method-for-resolving-collision">Chaining: Bonus method for resolving collision<a class="anchor-link" href="#Chaining:-Bonus-method-for-resolving-collision">¶</a></h3><p>If many items gets assigned to the same index location in hash table, then collision occurs.</p>
-<p><strong>Chaining</strong> will form a chain of all the items for that location and allow them to exist despite the collision.</p>
+<p><strong>Chaining</strong> method will form a chain of all the items for that location and allow them to exist despite the collision.</p>
+<p>Collision is resolved by creating a <strong>linked list</strong> of items that map to the same slot.</p>
 </div>
 </div>
 </div>
@@ -8217,9 +8250,9 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 <ul>
 <li><p>If there are many items that have been assigned to the same location, finding a specific item in that table becomes harder.</p>
 </li>
-<li><p>We will first get to the location, but instead of an item, we will get a collection.</p>
+<li><p>We will first get to the location, but instead of an item, we will get a collection or a list.</p>
 </li>
-<li><p>For that collection we have to use separate search method to see whether that item is present in that collection.</p>
+<li><p>For that collection we have to use separate search method to see whether that item is present in that collection ($O(n)$ complexity if the list has $n$ items).</p>
 </li>
 </ul>
 </div>
@@ -8237,12 +8270,29 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 <p>This convey how much chance we have for getting a collision.</p>
 <ul>
 <li>If $\lambda$ is small, there is lower chance of collision.</li>
-<li>If $\lambda$ is large, the table is getting filled up, which means higher chnace for collision..</li>
+<li>If $\lambda$ is large, the table is getting filled up, which means higher chance for collision.</li>
+<li>It is better to keep the load factor within $0.7$.</li>
 </ul>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cbddbe2e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Dictionaries in Python are hash tables</strong></p>
+<ul>
+<li>Stores key-value pairs</li>
+<li>allow retrieving values based on key.</li>
+<li>see the resources for examples.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=824afd16">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8263,11 +8313,11 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 <h3 id="Can-we-think-of-more-applications-of-hash-table?">Can we think of more applications of hash table?<a class="anchor-link" href="#Can-we-think-of-more-applications-of-hash-table?">¶</a></h3><ul>
 <li><p>For driver's license record's. Get information about the driver (ie. name, address, age) given the licence number.</p>
 </li>
-<li><p>For internet search engines.</p>
+<li><p>For internet <a href="https://blog.eepy.net/2020/06/15/the-simple-computer-science-behind-search-engines/">search engines</a>.</p>
 </li>
-<li><p>For electronic library catalogs. Hash Table implementations allow for a fast find among the millions of materials stored in the library.</p>
+<li><p>For electronic library catalogs. Hash Table implementations allow for a fast retrieval among the millions of materials stored in the library.</p>
 </li>
-<li><p>For implementing password database for systems with multiple users. Hash Tables allow for a fast retrieval of the password which corresponds to a given username.</p>
+<li><p>For implementing password database in systems with multiple users.</p>
 </li>
 </ul>
 </div>
@@ -8280,11 +8330,13 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise-time!">Exercise time!<a class="anchor-link" href="#Exercise-time!">¶</a></h2><h3 id="Problem-1">Problem 1<a class="anchor-link" href="#Problem-1">¶</a></h3><p>In a hash table of size 13 which index positions would the following key pairs will map to?</p>
-<p><strong>A.</strong> 1, 10</p>
-<p><strong>B.</strong> 13, 0</p>
-<p><strong>C.</strong> 1, 0</p>
-<p><strong>D.</strong> 2, 3</p>
+<h2 id="Exercise-time!">Exercise time!<a class="anchor-link" href="#Exercise-time!">¶</a></h2><h3 id="Problem-1">Problem 1<a class="anchor-link" href="#Problem-1">¶</a></h3><p>Suppose you are given the following set of keys to insert into a hash table that has 11 slots ($m$ = 11):</p>
+<p>113 , 117 , 97 , 100 , 114 , 108 , 116 , 105 , 99.</p>
+<p>Which of the following best demonstrates the contents of the hash table after all the keys have been inserted using <strong>open addressing with linear probing</strong>?</p>
+<p><strong>A.</strong> 100, __, __, 113, 114, 105, 116, 117, 97, 108, 99</p>
+<p><strong>B.</strong> 99, 100, __, 113, 114, __, 116, 117, 105, 97, 108</p>
+<p><strong>C.</strong> 100, 113, 117, 97, 14, 108, 116, 105, 99, __, __</p>
+<p><strong>D.</strong> 117, 114, 108, 116, 105, 99, __, __, 97, 100, 113</p>
 </div>
 </div>
 </div>
@@ -8306,13 +8358,11 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Problem-2">Problem 2<a class="anchor-link" href="#Problem-2">¶</a></h3><p>Suppose you are given the following set of keys to insert into a hash table that holds exactly 11 values:</p>
-<p>113 , 117 , 97 , 100 , 114 , 108 , 116 , 105 , 99.</p>
-<p>Which of the following best demonstrates the contents of the hash table after all the keys have been inserted using <strong>open addressing with linear probing</strong>?</p>
-<p><strong>A.</strong> 100, __, __, 113, 114, 105, 116, 117, 97, 108, 99</p>
-<p><strong>B.</strong> 99, 100, __, 113, 114, __, 116, 117, 105, 97, 108</p>
-<p><strong>C.</strong> 100, 113, 117, 97, 14, 108, 116, 105, 99, __, __</p>
-<p><strong>D.</strong> 117, 114, 108, 116, 105, 99, __, __, 97, 100, 113</p>
+<h3 id="Problem-2">Problem 2<a class="anchor-link" href="#Problem-2">¶</a></h3><p>In a hash table of size 13 (number of slots, $m$ = 13) which index positions would the following item pairs map to?</p>
+<p><strong>A.</strong> 1, 10</p>
+<p><strong>B.</strong> 13, 0</p>
+<p><strong>C.</strong> 1, 0</p>
+<p><strong>D.</strong> 2, 3</p>
 </div>
 </div>
 </div>
@@ -8334,7 +8384,7 @@ Yes: then move to the next index (slots) in a sequential manner.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Problem-3">Problem 3<a class="anchor-link" href="#Problem-3">¶</a></h3><p>Insert the keys 17, 3, 9, 39, 5, 6, 28, and 22 into a hash table of size 11 given using hash function h(x) = x mod 11. Use Chaining method.</p>
+<h3 id="Problem-3">Problem 3<a class="anchor-link" href="#Problem-3">¶</a></h3><p>Insert the items 17, 3, 9, 39, 5, 6, 28, and 22 into a hash table of size 11 using hash function $h(x) = x$ $mod$ 11. Use Chaining method.</p>
 </div>
 </div>
 </div>
